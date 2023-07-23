@@ -6,9 +6,9 @@ use App\Http\Requests\RegisterRequest;
 
 interface AuthenticationServiceInterface
 {
-    public function register(RegisterRequest $request);
+    public function register(array $body);
 
-    public function login(RegisterRequest $request);
+    public function authorize(array $body);
 
     public function logout();
 

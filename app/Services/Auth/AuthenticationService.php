@@ -3,38 +3,50 @@
 namespace App\Services\Auth;
 
 use App\Http\Requests\RegisterRequest;
+use App\Repositories\Auth\UserRepositoryInterface;
+use Illuminate\Support\Facades\Auth;
 
 class AuthenticationService implements AuthenticationServiceInterface
 {
 
-
-    public function register(RegisterRequest $request)
+    public function __construct(protected UserRepositoryInterface $userRepository)
     {
-        // TODO: Implement register() method.
     }
 
-    public function login(RegisterRequest $request)
+
+    public function register($body)
     {
-        // TODO: Implement login() method.
+        return $this->userRepository->store($body);
     }
+
+    public function authorize(array $body)
+    {
+        return $this->userRepository->authorize($body);
+    }
+
 
     public function logout()
     {
-        // TODO: Implement logout() method.
+        $this->userRepository->getGuardedUser()->logout();
     }
 
     public function me()
     {
-        // TODO: Implement me() method.
+        return $this->userRepository->getGuardedUser()->user();
     }
 
     public function refresh()
     {
-        // TODO: Implement refresh() method.
+        return $this->respondWithToken($this->userRepository->getGuardedUser()->refresh());
     }
 
     public function respondWithToken($token)
     {
-        // TODO: Implement respondWithToken() method.
+        return response()->json([
+            'access_token' => $token,
+            'token_type' => 'bearer',
+            'expires_in' => $this->userRepository->getGuardedUser()->factory()->getTTL() * 60 * 24 * 30,
+            'user' => $this->userRepository->getGuardedUser()->user()
+        ]);
     }
 }

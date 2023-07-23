@@ -6,5 +6,7 @@ interface UserRepositoryInterface
 {
     public function getGuardedUser();
 
-    public function store();
+    public function store(array $body);
+
+    public function authorize(array $body);
 }

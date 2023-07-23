@@ -1,0 +1,8 @@
+{
+    "User Registered and Logged in Successfully" : "! کاربر با موفقیت ثبت نام کرد و وارد شد",
+    "Invalid Email and Password !" : "!ایمیل و رمز عبور نامعتبر",
+    "Logged In Successfully"  : "با موفقیت وارد سیستم شدید",
+    "Profile Fetched Successfully !" :  "! پروفایل با موفقیت واکشی شد",
+    "Logged out successfully !"  : "! با موفقیت از سیستم خارج شد",
+    "Token Refreshed Successfully !" : "! توکن با موفقیت به روز شد"
+}
