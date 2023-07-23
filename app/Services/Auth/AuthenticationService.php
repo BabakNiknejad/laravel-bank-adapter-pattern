@@ -2,9 +2,7 @@
 
 namespace App\Services\Auth;
 
-use App\Http\Requests\RegisterRequest;
 use App\Repositories\Auth\UserRepositoryInterface;
-use Illuminate\Support\Facades\Auth;
 
 class AuthenticationService implements AuthenticationServiceInterface
 {

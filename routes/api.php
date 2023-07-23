@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthenticationController;
-use App\Http\Controllers\Bank\V1\BankController;
+use App\Http\Controllers\Bank\BankController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +29,6 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth', 'controller' => Authent
     Route::get('me', 'me');
 });
 
-Route::post('v1/bank' , [BankController::class , 'deposit']);
+Route::post('bank' , [BankController::class , 'deposit']);
 
 

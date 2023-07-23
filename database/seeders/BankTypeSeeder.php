@@ -3,10 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\BankType;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class BankSeeder extends Seeder
+class BankTypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.

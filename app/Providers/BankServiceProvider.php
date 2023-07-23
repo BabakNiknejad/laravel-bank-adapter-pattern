@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Services\Bank\ABank\ABank;
 use App\Services\Bank\ABank\ABankAdapter;
+use App\Services\Bank\AccountBalance;
 use App\Services\Bank\BankInterface;
 use App\Services\Bank\BBank\BBank;
 use App\Services\Bank\BBank\BBankAdapter;
@@ -20,7 +21,8 @@ class BankServiceProvider extends ServiceProvider
     {
         $this->app->bind(BankInterface::class , function () {
 
-            switch (request('bank')) {
+            $bank = request('bank');
+            switch ($bank) {
 
                 case 'A' :
                     return new ABankAdapter(new ABank);
@@ -32,6 +34,13 @@ class BankServiceProvider extends ServiceProvider
 
                 case 'C' :
                     return new CBankAdapter(new CBank);
+                    break;
+
+                case is_array($bank) :
+                    return new AccountBalance(
+                        new ABankAdapter(new ABank) ,
+                        new BBankAdapter(new BBank) ,
+                        new CBankAdapter(new CBank) );
                     break;
 
                 default :

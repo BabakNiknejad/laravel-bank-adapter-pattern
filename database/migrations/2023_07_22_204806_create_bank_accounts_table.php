@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreignId('bank_id');
-            $table->foreign('bank_id')->references('id')->on('bank_types')->onDelete('cascade');
+            $table->foreignId('bank_type_id');
+            $table->foreign('bank_type_id')->references('id')->on('bank_types')->onDelete('cascade');
             $table->string('card_number', 16)->unique();
             $table->string('shaba_number')->nullable()->unique();
             $table->softDeletes();

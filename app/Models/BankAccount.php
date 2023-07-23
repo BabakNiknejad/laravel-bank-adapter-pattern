@@ -11,7 +11,7 @@ class BankAccount extends Model
     use HasFactory , SoftDeletes;
     protected $guarded = [];
 
-    public function bank()
+    public function bankType()
     {
         return $this->belongsTo(BankType::class);
     }
