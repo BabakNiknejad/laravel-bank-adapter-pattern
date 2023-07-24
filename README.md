@@ -13,6 +13,7 @@
 - GetBalance
 - DependencyInjection
 - ServiceContainer
+- Seeder
 
 #Authentication
 - Register User API with Token

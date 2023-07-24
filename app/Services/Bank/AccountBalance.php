@@ -15,17 +15,17 @@ class AccountBalance implements BankInterface
         $this->banks = $args;
     }
 
-    public function deposit($card)
+    public function deposit()
     {
         /* @var BankInterface $bank */
         foreach ($this->banks as $bank) {
-            $this->balance += $bank->deposit($card);
+            $this->balance += $bank->deposit();
         }
         return $this->balance;
     }
 
 
-    public function withdraw($card)
+    public function withdraw()
     {
     }
 }

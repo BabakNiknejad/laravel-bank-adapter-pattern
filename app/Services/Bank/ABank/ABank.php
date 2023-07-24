@@ -9,7 +9,7 @@ class ABank
 {
 
 
-    public function depositMoney($card)
+    public function depositMoney()
     {
         try {
             $response = file_get_contents(base_path("app/Services/Bank/ABank/ABank.json"));
@@ -21,8 +21,8 @@ class ABank
         }
     }
 
-    public function withdrawMoney($card)
+    public function withdrawMoney()
     {
-        return $card . 'Aw';
+        return  'Aw';
     }
 }

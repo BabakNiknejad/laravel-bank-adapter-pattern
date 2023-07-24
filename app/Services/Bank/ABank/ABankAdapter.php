@@ -10,13 +10,13 @@ class ABankAdapter implements BankInterface
     {
     }
 
-    public function deposit($card)
+    public function deposit()
     {
-        return $this->bank->depositMoney($card);
+        return $this->bank->depositMoney();
     }
 
-    public function withdraw($card)
+    public function withdraw()
     {
-       return $this->bank->withdrawMoney($card);
+       return $this->bank->withdrawMoney();
     }
 }

@@ -11,11 +11,11 @@ class BankController extends Controller
 
     public function __construct(protected BankInterface $bankAdapter)
     {
-//        $this->middleware('auth:api');
+        $this->middleware('auth:api');
     }
 
     public function deposit(Request $request)
     {
-      return $this->bankAdapter->deposit($request->card);
+      return $this->bankAdapter->deposit();
     }
 }

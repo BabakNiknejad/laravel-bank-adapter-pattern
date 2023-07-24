@@ -4,7 +4,7 @@ namespace App\Services\Bank;
 
 interface BankInterface
 {
-    public function deposit($card);
+    public function deposit();
 
-    public function withdraw($card);
+    public function withdraw();
 }

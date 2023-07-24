@@ -10,13 +10,13 @@ class CBankAdapter implements BankInterface
     {
     }
 
-    public function deposit($card)
+    public function deposit()
     {
-        return $this->bank->Inventry($card);
+        return $this->bank->Inventry();
     }
 
-    public function withdraw($card)
+    public function withdraw()
     {
-       return $this->bank->withdraw($card);
+       return $this->bank->withdraw();
     }
 }

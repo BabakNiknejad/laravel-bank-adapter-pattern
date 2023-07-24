@@ -8,7 +8,7 @@ class CBank
 {
 
 
-    public function Inventry($card)
+    public function Inventry()
     {
         try {
             $response = file_get_contents(base_path("app/Services/Bank/CBank/CBank.json"));
@@ -20,9 +20,9 @@ class CBank
         }
     }
 
-    public function withdraw($card)
+    public function withdraw()
     {
-        return $card . 'CW';
+        return 'CW';
     }
 
 }

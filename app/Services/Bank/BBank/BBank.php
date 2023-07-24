@@ -8,7 +8,7 @@ class BBank
 {
 
 
-    public function InventryMoney($card)
+    public function InventryMoney()
     {
         try {
             $response = file_get_contents(base_path("app/Services/Bank/BBank/BBank.json"));
@@ -20,8 +20,8 @@ class BBank
         }
     }
 
-    public function withdrawMoney($card)
+    public function withdrawMoney()
     {
-        return $card . 'BW';
+        return  'BW';
     }
 }
