@@ -8,11 +8,12 @@
 </p>
 
 
-- AdapterPattern
+- Adapter Pattern
+- Strategy Pattern
+- Dependency Injection
+- Service Container
 - AccountBank
 - GetBalance
-- DependencyInjection
-- ServiceContainer
 - Seeder
 
 #Authentication
